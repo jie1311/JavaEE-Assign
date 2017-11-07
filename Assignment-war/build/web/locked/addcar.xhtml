@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Add a car</title>
+        <h:outputStylesheet name="css/style.css" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Add a Car</h1>
+            Car Number: <h:inputText value="#{carManagement.newCar.carId}" required="true" requiredMessage="You must input a integer."/><br />
+            Car Name: <h:inputText value="#{carManagement.newCar.name}" required="true" requiredMessage="You must input a name."/><br />
+            Car Make: <h:inputText value="#{carManagement.newCar.make}" required="true" requiredMessage="You must input a make."/><br />
+            Car VIN: <h:inputText value="#{carManagement.newCar.vin}" required="true" requiredMessage="You must input a vin."/><br />
+            Car Description: <h:inputText value="#{carManagement.newCar.description}" required="true" requiredMessage="You must input some description."/><br />
+            Car Type: <h:inputText value="#{carManagement.newCar.type}" required="true" requiredMessage="You must input a type."/><br />
+            Car Thumbnail: <h:inputText value="#{carManagement.newCar.thumbnail}" required="true" requiredMessage="You must input a thumbnail."/><br />
+            Car Preview URL: <h:inputText value="#{carManagement.newCar.previreUrl}" required="true" requiredMessage="You must input a preview URL."/><br />
+            <h:commandLink value="Add this car" action="admin.xhtml" actionListener="#{carManagement.addCar()}"/><br />
+            <h:link value="Go back management page" outcome="admin.xhtml" />
+        </h:form>
+    </h:body>   
+</html>
+

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Edit user</title>
+        <h:outputStylesheet name="css/style.css" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Edit User</h1>
+            User ID: <h:inputText value="#{userEdition.person.personId}" required="true" requiredMessage="You must input a integer."/><br />
+            User First Name: <h:inputText value="#{userEdition.person.firstName}" required="true" requiredMessage="You must input a first name."/><br />
+            User Last Name: <h:inputText value="#{userEdition.person.lastName}" required="true" requiredMessage="You must input a last name."/><br />
+            User Address: <h:inputText value="#{userEdition.person.address}" required="true" requiredMessage="You must input an address."/><br />
+            User Phone No.: <h:inputText value="#{userEdition.person.phoneNumber}" required="true" requiredMessage="You must input a phone number."/><br />
+            User Email: <h:inputText value="#{userEdition.person.email}" required="true" requiredMessage="You must input an email"/><br />
+            User Type: <h:inputText value="#{userEdition.person.type}" required="true" requiredMessage="You must input a type."/><br />
+            <h:commandLink value="Edit this user" action="manageuser.xhtml" actionListener="#{userEdition.edit()}"/><br />
+            <h:link value="Go back user management page" outcome="manageuser.xhtml" />
+        </h:form>
+    </h:body> 
+</html>
+

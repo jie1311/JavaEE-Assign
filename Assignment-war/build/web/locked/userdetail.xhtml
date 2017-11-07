@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Person Details</title>
+        <h:outputStylesheet name="css/style.css" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Person Details</h1>
+            <h3>
+                Person ID
+            </h3>
+            <p>
+                #{userDetail.person.personId}
+            </p>
+            <h3>
+                Person Name
+            </h3>
+            <p>
+                #{userDetail.person.firstName} #{userDetail.person.lastName}
+            </p>
+            <h3>
+                Person Phone
+            </h3>
+            <p>
+                #{userDetail.person.phoneNumber}
+            </p>
+            <h3>
+                Person Email
+            </h3>
+            <p>
+                #{userDetail.person.email}
+            </p>
+            <h3>
+                Person Address
+            </h3>
+            <p>
+                #{userDetail.person.address}
+            </p>
+            <h3>
+                Person Type
+            </h3>
+            <p>
+                #{userDetail.person.type}
+            </p>
+            <h:commandLink value="Delete this Person" action="admin.xhtml" actionListener="#{userDetail.deleteUser()}"/><br />
+            <h:link value="Go back management page" outcome="admin.xhtml" />
+        </h:form>
+    </h:body>
+</html>
+

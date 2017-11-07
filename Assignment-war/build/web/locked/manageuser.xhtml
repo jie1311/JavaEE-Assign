@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Management User</title>
+        <h:outputStylesheet name="css/style.css" />
+    </h:head>
+    <h:body>
+        <h1>Manage User</h1>
+        <h:form>
+            <h3>Search User</h3>
+            <p>
+                ID: 
+                <h:inputText value="#{userList.personId}"/>
+            </p>
+            <p>
+                First Name: 
+                <h:inputText value="#{userList.fname}"/>
+            </p>
+            <p>
+                Last Name: 
+                <h:inputText value="#{userList.lname}"/>
+            </p>
+            <p>
+                Email: 
+                <h:inputText value="#{userList.email}"/>
+            </p>
+            <h:commandLink value="Search" action="#{userList.setGetAll(false)}"/>
+            <table border="">
+                <tr>
+                    <td>
+                        User name
+                    </td>
+                    <td>
+                        User email
+                    </td>
+                    <td>
+                        User Address
+                    </td>
+                    <td>
+                        User Phone
+                    </td>
+                    <td>
+                        User Type
+                    </td>
+                    <td>
+                        Edit
+                    </td>
+                </tr>
+                <ui:repeat value="#{userList.search()}" var="car" >
+                    <tr>
+                        <td>
+                            <h:link value="#{car.firstName}  #{car.lastName}" outcome="userdetail">
+                                <f:param name="carId" value="#{car.personId}" />
+                            </h:link>
+                        </td>
+                        <td>
+                            <h:outputLabel value="#{car.email}" />
+                        </td>
+                        <td>
+                            <h:outputLabel value="#{car.address}" />
+                        </td>
+                        <td>
+                            <h:outputLabel value="#{car.phoneNumber}" />
+                        </td>
+                        <td>
+                            <h:outputLabel value="#{car.type}" />
+                        </td>
+                        <td>
+                            <h:link value="edit" outcome="edituser">
+                                <f:param name="carId" value="#{car.personId}"/>
+                            </h:link>
+                        </td>
+                    </tr>
+                </ui:repeat>
+            </table>
+            <h:link value="Add a user" outcome="adduser.xhtml" /><br />
+            <h:link value="Go back management page" outcome="admin.xhtml" />
+        </h:form>
+    </h:body>
+</html>
+

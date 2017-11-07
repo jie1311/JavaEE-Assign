@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Car Details</title>
+        <h:outputStylesheet name="css/style.css" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Car Details</h1>
+            <h3>
+                Model No.
+            </h3>
+            <p>
+                #{carDetail.car.carId}
+            </p>
+            <h3>
+                Model Name
+            </h3>
+            <p>
+                #{carDetail.car.name}
+            </p>
+            <h3>
+                Model Make
+            </h3>
+            <p>
+                #{carDetail.car.make}
+            </p>
+            <h3>
+                Model Type
+            </h3>
+            <p>
+                #{carDetail.car.type}
+            </p>
+            <h3>
+                Model VIN
+            </h3>
+            <p>
+                #{carDetail.car.vin}
+            </p>
+            <h3>
+                Model Description
+            </h3>
+            <p>
+                #{carDetail.car.description}
+            </p>
+            <h3>
+                Model PreView URL
+            </h3>
+            <p>
+                <a href="#{carDetail.car.previreUrl}" target="_blank">Go to.</a>
+            </p>
+            <h3>
+                Model Thumbnail
+            </h3>
+            <p>
+                <h:graphicImage value="../resources/#{carDetail.car.thumbnail}" width="960px" />
+            </p>
+            <h:commandLink value="Delete this car" action="admin.xhtml" actionListener="#{carDetail.deleteCar()}"/><br />
+            <h:link value="Go back management page" outcome="admin.xhtml" />
+        </h:form>
+    </h:body>
+</html>
+
